@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res)=> {
-	res.send(' This is node developemnts servers')
+	res.send('ready to start node server now')
 })
 
 app.listen(8080, () => {
