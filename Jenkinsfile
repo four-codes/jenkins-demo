@@ -15,7 +15,7 @@ pipeline {
             steps {
                 sh '''
                 echo "jino@1234" | docker login -u "jjino" --password-stdin
-                docker push jjino/abc-server:latest
+                docker push jjino/bcd-server:latest
                 docker logout
                 '''
             }
