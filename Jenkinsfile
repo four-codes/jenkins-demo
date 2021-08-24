@@ -1,7 +1,9 @@
 pipeline {
     agent any
        environment {
+           
             git_commit_id = sh(script: 'git rev-parse --short HEAD', returnStdout: true)
+           IMAGE_NAME = "api-${git_commit_id}"
         }
     stages {
         stage('Example') {
@@ -9,7 +11,7 @@ pipeline {
             steps {
 
               sh '''
-                echo ${git_commit_id}
+                echo ${IMAGE_NAME}
               '''
 
             }
