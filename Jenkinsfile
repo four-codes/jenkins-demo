@@ -1,11 +1,13 @@
 pipeline {
-    agent {
-        docker { image 'node:14-alpine' }
-    }
+    agent any
     stages {
-        stage('Test') {
+        stage('Example') {
+            def output = sh returnStdout: true, script: 'git rev-parse --short HEAD'
+
             steps {
-                sh 'node --version'
+
+              sh  echo ${output}
+
             }
         }
     }
