@@ -8,6 +8,7 @@ pipeline {
         stage('Example') {
             steps {
               sh '''
+                export imageNameandversion=$IMAGE_NAME
                 sed -i "s|containerImageName|$imageNameandversion|" api-server.yml
                 cat api-server.yml
               '''
