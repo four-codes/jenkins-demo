@@ -3,7 +3,7 @@ pipeline {
        environment {
            GIT_COMMIT_ID = sh(script: 'git rev-parse --short HEAD', returnStdout: true)
            IMAGE_NAME = "api-${GIT_COMMIT_ID}"
-           ECR_REPO="jjino/svc"
+           ECR_REPO=credentials("REPO")
         }
     stages {
         stage('Example') {
