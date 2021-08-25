@@ -10,6 +10,7 @@ pipeline {
             steps {
               sh '''
                 export imageNameandversion=$ECR_REPO:$IMAGE_NAME
+                echo $ECR_REPO
                 sed -i "s|containerImageName|$imageNameandversion|" api-server.yml
                 cat api-server.yml
               '''
