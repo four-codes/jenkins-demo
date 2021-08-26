@@ -12,10 +12,13 @@ if (jobName == 'staging-deployment') {
 
 pipeline {
     agent any
+    environment {
+      namespace="${impact}"
+    }
     stages {
         stage('Example') {
             steps {
-               echo "The impact is ${impact}" 
+               echo "The impact is ${namespace}" 
             }
         }
     }
