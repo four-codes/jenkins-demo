@@ -18,7 +18,10 @@ pipeline {
     stages {
         stage('Example') {
             steps {
-               echo "The impact is ${namespace}" 
+              script {
+                  def branchName = "${env.BRANCH_NAME}"
+                  echo "${branchName}"
+                }
             }
         }
     }
